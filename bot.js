@@ -2,8 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 const syn = require("./syn");
-const temperature = require("./temp.js");
-const temp = temperature.all();
 
 client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
