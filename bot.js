@@ -23,19 +23,15 @@ client.on('message', async message => {
 	
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     
-    const commands = {
-		"test": "Echo!"
-	};
-    
-    const command = args.shift().toLowerCase();
+    	const command = args.shift().toLowerCase();
 
-	if (command === 'ping') {
-    const m = await message.channel.send("Ping?");
-    m.edit({embed : {
-		color: 3447003,
-		description: `Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`
-	}});
-}
+	if (command === 'ping') {	
+    		const m = await message.channel.send("Ping?");
+    		m.edit({embed : {
+			color: 3447003,
+			description: `Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`
+		}});
+	}
 
 	if (command === 'dice') {
 		var randomNumber = Math.floor(Math.random() * 1000);
@@ -45,28 +41,16 @@ client.on('message', async message => {
 			await message.channel.send("You lost. You rolled " + randomNumber + ". Your roll has to be +500.");
 		}
 	}
-	if (command === 'temp') {
-		await message.channel.send("Raspberry pi 3 temperature: "+temp) 
-	
-	}
-	if(commands[message.content]) {
-		await message.channel.send(commands[message.content]);
-	}
-	if (command === 'perl') {
-		await message.channel.send("Perl is GAY!!!! REEEEEEEE!");
-	}
 	if (command === 'pi') {
-		message.delete()
 		await message.channel.send(`${Math.PI}`)
 	}
-	if (command == 'xor') {
-		const xor = syn.all();
-		await message.channel.send(xor);
+	if (command == 'xor') { //XOR equation solver using Synaptic.js library.
+		await message.channel.send(syn.all());
 	}
 	if (command == 'help') {
 		await message.channel.send({embed: {
 			color: 3447003,
-			description: "Coming soon!"
+			description: "Prefix: >"
 		}});
 	}
 	if (command === 'about') {
