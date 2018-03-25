@@ -1,4 +1,5 @@
 {
   "token": "insert your own token or registered bot token",
-  "prefix": ">"
+  "prefix": ">",
+  "ownerID": "Insert your id here. This prevents others from using your eval command"
 }
